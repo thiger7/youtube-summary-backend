@@ -28,6 +28,10 @@ Rails.application.configure do
   # Change to :null_store to avoid any caching.
   config.cache_store = :memory_store
 
+  # Replace the default in-process memory cache store with a durable alternative.
+  config.active_job.queue_adapter = :solid_queue
+
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
