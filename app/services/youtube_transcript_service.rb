@@ -38,12 +38,4 @@ class YoutubeTranscriptService
 
     JSON.parse(response.body)["candidates"].first["content"]["parts"].first["text"]
   end
-
-  # URLを入力して文字起こしと要約を取得するメインメソッド
-  def self.process(url)
-    youtube_id = extract_youtube_id(url)
-    transcript = fetch_transcript(youtube_id)
-    summary = generate_summary(transcript)
-    summary
-  end
 end
