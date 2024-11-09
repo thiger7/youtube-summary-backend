@@ -7,6 +7,12 @@ class SessionsController < ApplicationController
 
   def create
     if user = User.authenticate_by(params.permit(:email_address, :password))
+      Session.create!(
+        user_id: user.id,
+        ip_address: request.remote_ip,
+        user_agent: request.user_agent
+      )
+
       start_new_session_for user
       redirect_to after_authentication_url
     else

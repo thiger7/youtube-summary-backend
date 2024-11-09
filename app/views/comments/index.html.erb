@@ -1,0 +1,7 @@
+<h1>Comments</h1>
+
+<%= turbo_frame_tag "comments" do %>
+  <%= render @comments %>
+<% end %>
+
+<%= render 'form', comment: @new_comment %>

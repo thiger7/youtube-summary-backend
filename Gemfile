@@ -15,6 +15,8 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+gem 'rack-cors'
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
 
@@ -51,3 +53,6 @@ group :development do
   gem "web-console"
 end
 
+gem "google-cloud-language", "~> 1.7"
+
+gem "faraday", "~> 2.12"

@@ -8,3 +8,23 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+
+ /* コメントが追加された際に強調表示するエフェクト */
+@keyframes highlight {
+  0% { background-color: yellow; }
+  100% { background-color: transparent; }
+}
+
+.comment-highlight {
+  animation: highlight 2s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.comment-slide-in {
+  animation: slideIn 0.5s ease;
+}

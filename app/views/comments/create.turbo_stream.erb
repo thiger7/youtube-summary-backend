@@ -1,0 +1,6 @@
+<%= turbo_stream.append "comments" do %>
+  <%= render partial: "comments/comment", locals: { comment: @comment } %>
+  <script>
+    document.getElementById("comment_<%= @comment.id %>").classList.add("comment-slide-in");
+  </script>
+<% end %>
