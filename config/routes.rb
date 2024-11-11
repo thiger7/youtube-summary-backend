@@ -16,5 +16,10 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :comments, only: [ :index, :create ]
-  resources :videos, only: [ :create ]
+
+  # POSTリクエストのルート
+  post 'videos', to: 'videos#create'
+  
+  # GETリクエストのルート
+  get 'videos', to: 'videos#show'
 end

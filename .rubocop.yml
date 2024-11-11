@@ -1,8 +1,59 @@
-# Omakase Ruby styling for Rails
-inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+AllCops:
+  TargetRubyVersion: 3.3.6
+  NewCops: enable
 
-# Overwrite or add rules to create your own house style
-#
-# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
-# Layout/SpaceInsideArrayLiteralBrackets:
-#   Enabled: false
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/schema.rb'
+    - 'config/**/*'
+    - 'bin/*'
+    - 'tmp/**/*'
+    # rspec が書き出しているファイルなので無視
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    # annotate が書き出したファイル
+    - 'lib/tasks/auto_annotate_models.rake'
+    # ridgepole が書き出すファイル 
+    - Schemafile
+  DisplayCopNames: true
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+# `# -*- frozen_string_literal: true -*-`的なコメントが無いというエラー
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# クラスの頭にドキュメンテーションコメントがあるかのチェック
+# falseで任意に
+Style/Documentation:
+  Enabled: false
+
+# メソッド引数の末尾カンマをどうするか
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+# ブロックサイズが厳しすぎる（特にRSpec.describeについて）のでチェックをやめた
+Metrics/BlockLength:
+  Enabled: false
