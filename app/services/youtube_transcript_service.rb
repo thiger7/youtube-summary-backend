@@ -1,5 +1,6 @@
 require 'faraday'
 require 'json'
+require 'open3'
 
 class YoutubeTranscriptService
   # YouTubeの動画IDをURLから抽出するメソッド
@@ -11,7 +12,7 @@ class YoutubeTranscriptService
 
   # Pythonスクリプトで文字起こしを取得するメソッド
   def self.fetch_transcript(youtube_id)
-    transcript = `python3 lib/get_transcript.py #{youtube_id}`
+    transcript, status = Open3.capture2('python3', 'lib/get_transcript.py', youtube_id)
     transcript.strip
   end
 
