@@ -12,7 +12,7 @@ class YoutubeTranscriptService
 
   # Pythonスクリプトで文字起こしを取得するメソッド
   def self.fetch_transcript(youtube_id)
-    transcript, status = Open3.capture2('python3', 'lib/get_transcript.py', youtube_id)
+    transcript, = Open3.capture2('python3', 'lib/get_transcript.py', youtube_id)
     transcript.strip
   end
 
