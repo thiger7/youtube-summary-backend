@@ -55,4 +55,4 @@ end
 
 gem 'google-cloud-language', '~> 1.7'
 
-gem 'faraday', '~> 2.12'
+gem 'faraday', '~> 2.14'
