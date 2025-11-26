@@ -53,6 +53,6 @@ group :development do
   gem 'web-console'
 end
 
-gem 'google-cloud-language', '~> 1.7'
+gem 'google-cloud-language', '~> 2.0'
 
 gem 'faraday', '~> 2.12'

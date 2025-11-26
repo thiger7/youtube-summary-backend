@@ -132,14 +132,14 @@ GEM
       base64 (~> 0.2)
       faraday (>= 1.0, < 3.a)
     google-cloud-errors (1.5.0)
-    google-cloud-language (1.8.0)
+    google-cloud-language (2.0.3)
       google-cloud-core (~> 1.6)
-      google-cloud-language-v1 (>= 0.10, < 2.a)
-      google-cloud-language-v1beta2 (>= 0.10, < 2.a)
+      google-cloud-language-v1 (~> 1.0)
+      google-cloud-language-v2 (~> 1.0)
     google-cloud-language-v1 (1.4.1)
       gapic-common (~> 1.2)
       google-cloud-errors (~> 1.0)
-    google-cloud-language-v1beta2 (0.15.1)
+    google-cloud-language-v2 (1.2.1)
       gapic-common (~> 1.2)
       google-cloud-errors (~> 1.0)
     google-logging-utils (0.2.0)
@@ -446,7 +446,7 @@ DEPENDENCIES
   brakeman
   debug
   faraday (~> 2.12)
-  google-cloud-language (~> 1.7)
+  google-cloud-language (~> 2.0)
   importmap-rails
   kamal
   pg (~> 1.1)
